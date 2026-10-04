@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect</title>
+</head>
+<body>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const url = params.get("url");
+
+  if (!url) {
+    document.body.innerText = "Missing URL";
+  } else {
+    try {
+      const target = new URL(url);
+
+      if (target.protocol === "http:" || target.protocol === "https:") {
+        window.location.replace(target.href);
+      } else {
+        document.body.innerText = "Invalid URL";
+      }
+    } catch (e) {
+      document.body.innerText = "Invalid URL";
+    }
+  }
+</script>
+
+</body>
+</html>
